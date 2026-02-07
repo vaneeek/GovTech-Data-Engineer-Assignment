@@ -1,0 +1,9 @@
+[project]
+name = "govtech-tax-pipeline"
+version = "0.1.0"
+description = "ETL pipeline for tax return data quality and analytics."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]

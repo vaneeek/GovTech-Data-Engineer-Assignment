@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  tax-pipeline:
+    build: .
+    container_name: govtech-tax-pipeline
+    environment:
+      PIPELINE_CONFIG: configs/pipeline.yaml
+    volumes:
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+    command: ["python", "-m", "src.main", "--config", "${PIPELINE_CONFIG}"]

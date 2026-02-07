@@ -1,0 +1,53 @@
+input_path: input/individual_tax_returns.csv
+output_dir: outputs
+source_name: Tax_source
+
+archive_dir: archive
+
+layers:
+  landing_dir: outputs/landing
+  raw_dir: outputs/raw
+  staging_dir: outputs/staging
+  curated_dir: outputs/curated
+  datamart_dir: outputs/datamart
+
+incremental:
+  enabled: true
+  key: assessment_year
+  state_path: outputs/metadata/state.json
+  allow_backfill: false
+  track_files: true
+
+columns:
+  nric: nric
+  postal_code: postal_code
+  assessment_year: assessment_year
+  filing_date: filing_date
+  annual_income: annual_income_sgd
+  total_reliefs: total_reliefs_sgd
+  chargeable_income: chargeable_income_sgd
+  cpf_contribution: cpf_contributions_sgd
+  residential_status: residential_status
+  number_of_dependents: number_of_dependents
+  occupation: occupation
+  region: region
+  full_name: full_name
+  filing_status: filing_status
+  housing_type: housing_type
+  foreign_income: foreign_income_sgd
+  tax_payable: tax_payable_sgd
+  tax_paid: tax_paid_sgd
+
+required_columns:
+  - nric
+  - postal_code
+  - assessment_year
+  - filing_date
+  - annual_income
+  - total_reliefs
+  - chargeable_income
+  - cpf_contribution
+  - residential_status
+
+quality_tolerance:
+  income_diff: 0.01

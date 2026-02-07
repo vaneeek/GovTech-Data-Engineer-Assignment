@@ -175,4 +175,5 @@ erDiagram
 
 ## Submission
 - Include the full repository and keep the latest outputs in outputs/ for review.
-- The packaged archive is named govtech_submission.zip.
+
+
